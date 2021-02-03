@@ -1,0 +1,77 @@
+@import "./collor.scss";
+
+.search-form {
+  background-color: #fff;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.03), 0 1px 4px rgba(0, 0, 0, 0.05);
+  border-radius: 0.375rem !important;
+  .form-control:focus {
+    border-color: #2684ff;
+    border-style: solid;
+    border-radius: 4px;
+    box-shadow: 0 0 0 1px #2684ff;
+  }
+
+  .search-form-container {
+    padding: 2em;
+  }
+  .search-form-lable {
+    width: 100%;
+    text-align: left;
+  }
+  .search-form-title-holder {
+    display: flex;
+    .search-form-title {
+      text-align: left;
+      margin-bottom: 1.2em;
+      width: 100%;
+    }
+  }
+  .search-form-clear-filter {
+    display: flex;
+    justify-content: flex-end;
+    .search-form-clear-filter-button {
+      color: $primaryColor;
+      background-color: #fff;
+      border-color: $primaryColor;
+    }
+
+    .search-form-clear-filter-button:hover {
+      color: #fff;
+      background-color: $primaryColor;
+      border-color: $primaryColor;
+    }
+    .btn-primary.focus {
+      border-color: $primaryColor;
+      border-style: solid;
+      border-radius: 4px;
+      box-shadow: 0 0 0 1px $primaryColor;
+    }
+
+    @media (max-width: 766px) {
+      justify-content: center;
+    }
+  }
+}
+
+.search-result {
+  background-color: #fff;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.03), 0 1px 4px rgba(0, 0, 0, 0.05);
+  border-radius: 0.375rem !important;
+  margin-top: 3em;
+}
+
+.subcontractor-tr {
+  .subcontractor-logo {
+    margin-right: 1em;
+  }
+  .subcontractor-items {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.table-no-results {
+  color: #5c5852;
+}

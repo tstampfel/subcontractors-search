@@ -1,0 +1,57 @@
+{
+  "name": "subcontractor-search-app",
+  "version": "1.0.0",
+  "description": "Subcontractor search app",
+  "main": "app.ts",
+  "scripts": {
+    "start": "ts-node src/index.ts",
+    "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build",
+    "watch-and-run": "env-cmd -f ./config/dev.env tsc -w & nodemon -q -w dist dist/index.js",
+    "debug": "env-cmd -f ./config/dev.env ts-node-dev --respawn --prefer-ts --debug --inspect -- src/index.ts",
+    "client:build": "cd client && npm run build",
+    "client": "cd client && npm start",
+    "dev": "concurrently --kill-others-on-fail \"npm run client\" \"npm start\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:tstampfel/subcontractors-search.git"
+  },
+  "author": "Tomislav Stampfel",
+  "license": "ISC",
+  "dependencies": {
+    "@types/cors": "^2.8.4",
+    "@types/express": "^4.16.0",
+    "@types/express-session": "^1.15.11",
+    "@types/graphql": "^14.0.4",
+    "@types/node": "^10.17.50",
+    "@types/nodemailer": "^4.6.5",
+    "@types/uuid": "^8.3.0",
+    "@apollo/client": "^3.3.7",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.1.2",
+    "apollo-server": "^2.13.0",
+    "apollo-server-express": "^2.3.1",
+    "class-validator": "^0.9.1",
+    "concurrently": "^5.3.0",
+    "cors": "^2.8.5",
+    "dataloader": "^1.4.0",
+    "express": "^4.16.4",
+    "express-session": "^1.15.6",
+    "graphql": "^14.7.0",
+    "graphql-query-complexity": "^0.2.2",
+    "graphql-redis-subscriptions": "^2.2.1",
+    "graphql-subscriptions": "^1.1.0",
+    "pg": "^8.4.0",
+    "reflect-metadata": "^0.1.10",
+    "type-graphql": "^0.17.6",
+    "typedi": "^0.8.0",
+    "typeorm": "0.2.29",
+    "uuid": "^8.3.2",
+    "nodemon": "^1.18.9",
+    "helmet": "^4.4.1"
+  },
+  "devDependencies": {
+    "env-cmd": "^10.1.0",
+    "ts-node-dev": "^1.1.1"
+  }
+}
